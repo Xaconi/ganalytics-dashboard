@@ -1,6 +1,8 @@
+# WORK IN PROGESS
+
 ## Google Analytics Dashboard
 
-IN PROGESS - Useful tool for a multi-website analytics agency. WIth this tool you can control the Analytics from a bunch of websites and compare the data from the day before, the week before and the month before.
+Useful tool for a multi-website analytics agency. With this tool you can control the Analytics from a bunch of websites and compare the data from the day before, the week before and the month before.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,3 +15,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [ ] Retrive data for every website on the account
 - [ ] Data presentation
 - [ ] Data comparative
+
+
+### Install instructions
+
+```
+    git clone https://github.com/Xaconi/ganalytics-dashboard.git
+```
+
+```
+    cd ganalytics-dashboard
+```
+
+```
+    npm install
+```
+
+* Create a ClientID on [Google Developers Console](https://cloud.google.com/)
+* Copy the ClientID to an .env file on the project root as REACT_APP_GOOGLE_API variable
+* Start the App with ``` npm start ```
+* ...
