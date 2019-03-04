@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### @TODO List
 
-- [ ] OAuth Google Login 
+- [x] OAuth Google Login 
 - [ ] Basic GA API usage
 - [ ] Layout and theme with @React
 - [ ] Component sections
