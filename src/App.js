@@ -4,8 +4,25 @@ import './App.css';
 
 // Components
 import { LoginButton } from './components/LoginButton'
+import { GoogleAnalyticsList } from './components/GoogleAnalyticsList'
+
+// Libs
+import PropTypes from 'prop-types'
 
 class App extends Component {
+
+	// State init
+	state = {
+		login : false,
+		authBearer : ''
+	}
+
+	_triggerLogin = (authBearer) => {
+		this.setState({ 
+			login : true,
+			authBearer 
+		})
+	}
 
   	render() {
 		return (
@@ -15,7 +32,10 @@ class App extends Component {
 					<p>
 						Edit <code>src/App.js</code> and save to reload.
 					</p>
-					<LoginButton />
+					<LoginButton onLogin={this._triggerLogin}/>
+					{this.state.login 
+						? <GoogleAnalyticsList authBearer={this.state.authBearer} />
+						: <p>No logged yet...</p>}
 				</header>
 			</div>
 		);

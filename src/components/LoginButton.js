@@ -11,24 +11,23 @@ export class LoginButton extends Component {
     }
 
     _handleLoginOK = (response) => {
-        console.log(response);
         this.setState( { isAuthenticated : true })
+        this.props.onLogin(response.accessToken)
     }
 
     _handleLoginKO = (response) => {
-        console.log(response);
         this.setState( { isAuthenticated : false })
     }
 
     render() {
-        console.log(process.env)
         if(this.state.isAuthenticated === false){
             return(
                 <GoogleLogin
                     buttonText="Login"
                     clientId={process.env.REACT_APP_GOOGLE_API}
                     onFailure={this._handleLoginKO}
-                    onSuccess={this._handleLoginOK} />
+                    onSuccess={this._handleLoginOK}
+                    scope="https://www.googleapis.com/auth/analytics.edit" />
             );
         } else {
             return(
