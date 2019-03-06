@@ -33,5 +33,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * Create a ClientID on [Google Developers Console](https://cloud.google.com/)
 * Copy the ClientID to an .env file on the project root as REACT_APP_GOOGLE_API variable
+* Authorize the App domains on the [Google Developers Console](https://cloud.google.com/)
+* Enable the Google Analytics API on [Google Developers Console](https://cloud.google.com/)
+* Add the Google Analytics API scope on [Google Developers Console](https://cloud.google.com/)
 * Start the App with ``` npm start ```
 * ...
