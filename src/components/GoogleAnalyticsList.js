@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// Components
+import { GoogleAnalyticsItem } from './GoogleAnalyticsItem'
+
 // Libs
 import PropTypes from 'prop-types'
 
@@ -14,19 +17,18 @@ export class GoogleAnalyticsList extends Component {
         authBearer: PropTypes.string
     }
 
-    componentWillMount() {
-        console.log('componentWillMount')
-    }
-
     render() {
         return(
             <div className="googleAnalyticsList">
             {
                 this.state.gaItems.map(
                     gaItem => { return (
-                        <div className="googleAnalyticsItem">
-                            {gaItem.name}
-                        </div>
+                        <GoogleAnalyticsItem 
+                            authBearer={this.props.authBearer}
+                            id={gaItem.webProperties[0].profiles[0].id} 
+                            key={gaItem.id} 
+                            name={gaItem.name} 
+                             />
                     ) }
                 )
             }
@@ -46,6 +48,7 @@ export class GoogleAnalyticsList extends Component {
             .then(response => response.json())
             .then(results => {
                 console.log({ results })
+                this.setState({ gaItems : results.items })
             })
     }
 }

@@ -6,9 +6,6 @@ import './App.css';
 import { LoginButton } from './components/LoginButton'
 import { GoogleAnalyticsList } from './components/GoogleAnalyticsList'
 
-// Libs
-import PropTypes from 'prop-types'
-
 class App extends Component {
 
 	// State init
