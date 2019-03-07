@@ -21,17 +21,48 @@ export class GoogleAnalyticsItem extends Component {
 
     componentDidMount() {
         const url = new URL("https://www.googleapis.com/analytics/v3/data/ga")
-        const params = {
+        const paramsYesterday = {
             ids:`ga:${this.props.id}`,
-            'start-date': '2019-03-01',
-            'end-date': '2019-03-07',
+            'start-date': '2daysAgo',
+            'end-date': '1daysAgo',
             'metrics': 'ga:sessions',
         }
 
-        Object.keys(params).forEach(
-            key => url.searchParams.append(key, params[key])
+        Object.keys(paramsYesterday).forEach(
+            key => url.searchParams.append(key, paramsYesterday[key])
         )
 
+        this._getGAData(url, 'resultsYesterday')
+
+        const paramsWeek = {
+            ids:`ga:${this.props.id}`,
+            'start-date': '7daysAgo',
+            'end-date': '1daysAgo',
+            'metrics': 'ga:sessions',
+        }
+
+        Object.keys(paramsWeek).forEach(
+            key => url.searchParams.append(key, paramsWeek[key])
+        )
+
+        this._getGAData(url, 'resultsWeek')
+
+        const paramsMonth = {
+            ids:`ga:${this.props.id}`,
+            'start-date': '30daysAgo',
+            'end-date': '1daysAgo',
+            'metrics': 'ga:sessions',
+        }
+
+        Object.keys(paramsMonth).forEach(
+            key => url.searchParams.append(key, paramsMonth[key])
+        )
+        this._getGAData(url, 'resultsMonth')
+
+        
+    }
+
+    _getGAData(url, resultsState) {
         fetch(url, 
             {
                 method: 'get',
@@ -42,7 +73,7 @@ export class GoogleAnalyticsItem extends Component {
             .then(response => response.json())
             .then(results => {
                 console.log({ results })
-                this.setState({ results })
+                this.setState({ resultsState : results })
             }
         )
     }
