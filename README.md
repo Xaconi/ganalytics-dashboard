@@ -15,6 +15,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [ ] Retrive data for every website on the account
 - [ ] Data presentation
 - [ ] Data comparative
+- [ ] Deployment on [Github Pages](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom)
 
 
 ### Install instructions
