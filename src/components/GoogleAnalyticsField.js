@@ -18,7 +18,7 @@ export class GoogleAnalyticsField extends Component {
     render() {
         return (
             <div key={this.props.id + this.props.date} className="googleAnalyticsField">
-                OK
+                { this.state.results }
             </div>
         )
     }
@@ -50,7 +50,7 @@ export class GoogleAnalyticsField extends Component {
             .then(response => response.json())
             .then(results => {
                 console.log({ results })
-                this.setState({ results })
+                this.setState({ results : results.totalsForAllResults['ga:sessions'] })
             }
         )
     }
