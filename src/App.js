@@ -3,37 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 
 // Components
-import { LoginButton } from './components/LoginButton'
-import { GoogleAnalyticsList } from './components/GoogleAnalyticsList'
+import { Header } from './components/Header'
+import { Body } from './components/Body'
+import { Footer } from './components/Footer'
+
+// Libs
+import 'bulma/css/bulma.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 class App extends Component {
-
-	// State init
-	state = {
-		login : false,
-		authBearer : ''
-	}
-
-	_triggerLogin = (authBearer) => {
-		this.setState({ 
-			login : true,
-			authBearer 
-		})
-	}
 
   	render() {
 		return (
 			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>
-						Edit <code>src/App.js</code> and save to reload.
-					</p>
-					<LoginButton onLogin={this._triggerLogin}/>
-					{this.state.login 
-						? <GoogleAnalyticsList authBearer={this.state.authBearer} />
-						: <p>No logged yet...</p>}
-				</header>
+				<Header />
+				<Body />
+				<Footer />
 			</div>
 		);
   	}
