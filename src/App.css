@@ -26,6 +26,7 @@ html {
 	background-color: unset;
 }
 
+.googleAnalyticsList table th,
 .googleAnalyticsList table td {
 	text-align: center;
 }
