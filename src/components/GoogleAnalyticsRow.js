@@ -6,7 +6,7 @@ import { GoogleAnalyticsField } from './GoogleAnalyticsField'
 // Libs
 import PropTypes from 'prop-types'
 
-export class GoogleAnalyticsItem extends Component {
+export class GoogleAnalyticsRow extends Component {
 
     static propTypes = {
         authBearer : PropTypes.string,
@@ -16,7 +16,7 @@ export class GoogleAnalyticsItem extends Component {
 
     render() {
         return (
-            <tr className="googleAnalyticsItem">
+            <tr className="googleAnalyticsRow">
                 <td>
                     {this.props.name}
                 </td>

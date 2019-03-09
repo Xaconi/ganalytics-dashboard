@@ -1,10 +1,15 @@
 html {
-	background-color: whitesmoke;
+	background-color: whitesmoke !important;
 }
 
 .App {
 	text-align: center;
 	background-color: whitesmoke;
+	padding: 20px 0px;
+}
+
+.explanation {
+	text-align: justify;
 }
 
 .icons-container {
@@ -44,5 +49,5 @@ html {
 	animation-name: textElementNotLoaded;
 	animation-iteration-count: infinite;
 	animation-duration: 2s;
-	border-radius: 5px;
+	border-radius: 3px;
 }

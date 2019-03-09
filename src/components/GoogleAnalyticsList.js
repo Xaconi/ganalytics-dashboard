@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // Components
-import { GoogleAnalyticsItem } from './GoogleAnalyticsItem'
+import { GoogleAnalyticsRow } from './GoogleAnalyticsRow'
 
 // Libs
 import PropTypes from 'prop-types'
@@ -33,7 +33,7 @@ export class GoogleAnalyticsList extends Component {
                         {
                             this.state.gaItems.map(
                                 gaItem => { return (
-                                    <GoogleAnalyticsItem 
+                                    <GoogleAnalyticsRow 
                                         authBearer={this.props.authBearer}
                                         id={gaItem.webProperties[0].profiles[0].id} 
                                         key={gaItem.id} 
