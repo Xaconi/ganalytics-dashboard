@@ -20,18 +20,30 @@ export class GoogleAnalyticsList extends Component {
     render() {
         return(
             <div className="googleAnalyticsList">
-            {
-                this.state.gaItems.map(
-                    gaItem => { return (
-                        <GoogleAnalyticsItem 
-                            authBearer={this.props.authBearer}
-                            id={gaItem.webProperties[0].profiles[0].id} 
-                            key={gaItem.id} 
-                            name={gaItem.name} 
-                             />
-                    ) }
-                )
-            }
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>Website</th>
+                            <th>1 day data</th>
+                            <th>1 week data</th>
+                            <th>1 month data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.gaItems.map(
+                                gaItem => { return (
+                                    <GoogleAnalyticsItem 
+                                        authBearer={this.props.authBearer}
+                                        id={gaItem.webProperties[0].profiles[0].id} 
+                                        key={gaItem.id} 
+                                        name={gaItem.name} 
+                                        />
+                                ) }
+                            )
+                        }
+                    </tbody>
+                </table>
             </div>
         )
     }

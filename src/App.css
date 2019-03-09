@@ -1,3 +1,7 @@
+html {
+	background-color: whitesmoke;
+}
+
 .App {
 	text-align: center;
 	background-color: whitesmoke;
@@ -11,4 +15,33 @@
 	display: inline-flex;
 	width: 100px;
 	justify-content: center;
+}
+
+.googleAnalyticsList {
+	display: flex;
+    justify-content: center;
+}
+
+.googleAnalyticsList table {
+	background-color: unset;
+}
+
+.googleAnalyticsList table td {
+	text-align: center;
+}
+
+@keyframes textElementNotLoaded {
+	0%   {background-color: #c4c4c4;}
+	50%  {background-color: white;}
+	100%  {background-color: #c4c4c4;}
+  }
+
+.textElementNotLoaded{
+	width: 100px;
+	height: 25px;
+	background-color: #c4c4c4;
+	animation-name: textElementNotLoaded;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+	border-radius: 5px;
 }

@@ -17,8 +17,15 @@ export class GoogleAnalyticsField extends Component {
 
     render() {
         return (
-            <div key={this.props.id + this.props.date} className="googleAnalyticsField">
-                { this.state.results }
+            <div>
+                {this.state.results.length > 0 
+                    ? <div key={this.props.id + this.props.date} className="googleAnalyticsFieldLoaded">
+                            { this.state.results }
+                        </div>
+                    : <div key={this.props.id + this.props.date} className="textElementNotLoaded">
+                        
+                    </div>
+                }
             </div>
         )
     }

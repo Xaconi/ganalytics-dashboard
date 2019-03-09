@@ -16,24 +16,32 @@ export class GoogleAnalyticsItem extends Component {
 
     render() {
         return (
-            <div className="googleAnalyticsItem">
-                {this.props.name}
+            <tr className="googleAnalyticsItem">
+                <td>
+                    {this.props.name}
+                </td>
 
-                <GoogleAnalyticsField 
-                    authBearer={this.props.authBearer}
-                    id={this.props.id}
-                    date={'2daysAgo'}/>
+                <td>
+                    <GoogleAnalyticsField 
+                        authBearer={this.props.authBearer}
+                        id={this.props.id}
+                        date={'2daysAgo'}/>
+                </td>
 
-                <GoogleAnalyticsField 
-                    authBearer={this.props.authBearer}
-                    id={this.props.id}
-                    date={'7daysAgo'}/>
+                <td>
+                    <GoogleAnalyticsField 
+                        authBearer={this.props.authBearer}
+                        id={this.props.id}
+                        date={'7daysAgo'}/>
+                </td>
 
-                <GoogleAnalyticsField 
-                    authBearer={this.props.authBearer}
-                    id={this.props.id}
-                    date={'30daysAgo'}/>
-            </div>
+                <td>
+                    <GoogleAnalyticsField 
+                        authBearer={this.props.authBearer}
+                        id={this.props.id}
+                        date={'30daysAgo'}/>
+                </td>
+            </tr>
         )
     }
 
