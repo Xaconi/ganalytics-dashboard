@@ -6,7 +6,10 @@ import PropTypes from 'prop-types'
 export class GoogleAnalyticsField extends Component {
 
     state = {
-        results : []
+        percentageDifference : 0,
+        results : null,
+        resultsPrevious : null,
+        resultsCalculated : false,
     }
 
     static propTypes = {
@@ -18,9 +21,9 @@ export class GoogleAnalyticsField extends Component {
     render() {
         return (
             <div>
-                {this.state.results.length > 0 
+                {this.state.resultsCalculated
                     ? <div key={this.props.id + this.props.date} className="googleAnalyticsFieldLoaded">
-                            { this.state.results }
+                            { this.state.percentageDifference }
                         </div>
                     : <div key={this.props.id + this.props.date} className="textElementNotLoaded">
                         
@@ -31,10 +34,10 @@ export class GoogleAnalyticsField extends Component {
     }
 
     componentDidMount() {
-        const url = new URL("https://www.googleapis.com/analytics/v3/data/ga")
+        let url = new URL("https://www.googleapis.com/analytics/v3/data/ga")
         const params = {
             ids:`ga:${this.props.id}`,
-            'start-date': this.props.date,
+            'start-date': this.props.date + 'daysAgo',
             'end-date': '1daysAgo',
             'metrics': 'ga:sessions',
         }
@@ -44,6 +47,21 @@ export class GoogleAnalyticsField extends Component {
         )
 
         this._getGAData(url)
+
+        url = new URL("https://www.googleapis.com/analytics/v3/data/ga")
+        const newDate = parseInt(this.props.date) + (parseInt(this.props.date) - 1)
+        const newParams = {
+            ids:`ga:${this.props.id}`,
+            'start-date': newDate + 'daysAgo',
+            'end-date': this.props.date + 'daysAgo',
+            'metrics': 'ga:sessions',
+        }
+
+        Object.keys(newParams).forEach(
+            key => url.searchParams.append(key, newParams[key])
+        )
+
+        this._getPreviousGAData(url)
     }
 
     _getGAData(url) {
@@ -58,7 +76,41 @@ export class GoogleAnalyticsField extends Component {
             .then(results => {
                 console.log({ results })
                 this.setState({ results : results.totalsForAllResults['ga:sessions'] })
+                this._showResults()
             }
         )
+    }
+
+    _getPreviousGAData(url) {
+        fetch(url, 
+            {
+                method: 'get',
+                headers: new Headers({
+                    'Authorization' : `Bearer ${this.props.authBearer}`
+                })
+            })
+            .then(response => response.json())
+            .then(results => {
+                console.log({ results })
+                this.setState({ resultsPrevious : results.totalsForAllResults['ga:sessions'] })
+                this._showResults()
+            }
+        )
+    }
+
+    _showResults() {
+        let percentageDifference = 0
+        if(this.state.previousResults !== null && this.state.results !== null) {
+
+            const currentResults = parseInt(this.state.results)
+            const previousResults = parseInt(this.state.previousResults)
+
+            if(!isNaN(previousResults))
+                percentageDifference = ((currentResults - previousResults)* 100) / previousResults
+            else
+                percentageDifference = '♾️'
+            this.setState({ percentageDifference, resultsCalculated : true })
+
+        }
     }
 }

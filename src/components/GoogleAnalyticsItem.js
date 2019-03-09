@@ -25,21 +25,21 @@ export class GoogleAnalyticsItem extends Component {
                     <GoogleAnalyticsField 
                         authBearer={this.props.authBearer}
                         id={this.props.id}
-                        date={'2daysAgo'}/>
+                        date={'2'}/>
                 </td>
 
                 <td>
                     <GoogleAnalyticsField 
                         authBearer={this.props.authBearer}
                         id={this.props.id}
-                        date={'7daysAgo'}/>
+                        date={'7'}/>
                 </td>
 
                 <td>
                     <GoogleAnalyticsField 
                         authBearer={this.props.authBearer}
                         id={this.props.id}
-                        date={'30daysAgo'}/>
+                        date={'30'}/>
                 </td>
             </tr>
         )
