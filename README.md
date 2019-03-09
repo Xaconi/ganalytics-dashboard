@@ -9,9 +9,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### @TODO List
 
 - [x] OAuth Google Login 
-- [ ] Basic GA API usage
-- [ ] Layout and theme with @React
-- [ ] Component sections
+- [x] Basic GA API usage
+- [x] Layout and theme with @React
+- [x] Component sections
+- [x] App Logo
 - [ ] Retrive data for every website on the account
 - [ ] Data presentation
 - [ ] Data comparative

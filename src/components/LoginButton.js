@@ -29,10 +29,6 @@ export class LoginButton extends Component {
                     onSuccess={this._handleLoginOK}
                     scope="https://www.googleapis.com/auth/analytics" />
             );
-        } else {
-            return(
-                <p>Logged!</p>
-            )
         }
     }
 }

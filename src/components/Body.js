@@ -39,7 +39,7 @@ export class Body extends Component {
                             <LoginButton onLogin={this._triggerLogin}/>
                             {this.state.login 
                                 ? <GoogleAnalyticsList authBearer={this.state.authBearer} />
-                                : <p>No logged yet...</p>}
+                                : <p></p>}
                         </div>
                     </div>
                 </div>
