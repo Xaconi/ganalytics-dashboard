@@ -13,10 +13,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Layout and theme with @React
 - [x] Component sections
 - [x] App Logo
-- [ ] Retrieve data for every website on the account
-- [ ] Data presentation
-- [ ] Data comparative
+- [x] Retrieve data for every website on the account
+- [x] Data presentation
+- [x] Data comparative
 - [ ] Basic Metadata with Helmet
+- [ ] Styles on each field depending on the results
 - [ ] Deployment on [Github Pages](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom)
 
 
