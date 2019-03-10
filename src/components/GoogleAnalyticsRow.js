@@ -142,18 +142,19 @@ export class GoogleAnalyticsRow extends Component {
     }
 
     _processResults() {
-        this.state.results.forEach((element, index) => {
-            const maxDays = 60
-            const maxDaysMonth = 30
-            const maxDaysWeek = 7
-            const maxDaysDay = 1
+        const maxDays = 60
+        const maxDaysMonth = 30
+        const maxDaysWeek = 7
+        const maxDaysDay = 1
 
-            let resultsMonth = 0
-            let resultsWeek = 0
-            let resultsDay = 0
-            let resultsMonthComparative = 0
-            let resultsWeekComparative = 0
-            let resultsDayComparative = 0
+        let resultsMonth = 0
+        let resultsWeek = 0
+        let resultsDay = 0
+        let resultsMonthComparative = 0
+        let resultsWeekComparative = 0
+        let resultsDayComparative = 0
+        
+        this.state.results.forEach((element, index) => {
 
             const day = maxDays - parseInt(element.dimensions[0])
             const currentValue = parseInt(element.metrics[0].values[0])
