@@ -27,9 +27,10 @@ export class LoginButton extends Component {
                     clientId={process.env.REACT_APP_GOOGLE_API}
                     onFailure={this._handleLoginKO}
                     onSuccess={this._handleLoginOK}
-                    scope="https://www.googleapis.com/auth/analytics" />
+                    scope="https://www.googleapis.com/auth/analytics.edit" />
             );
-        }
+        } else
+            return null
     }
 }
 

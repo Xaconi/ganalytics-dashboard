@@ -9,7 +9,7 @@ export class Header extends Component {
             <header>
                 {/* Logo + Social Network Links */}
                 <div className="columns">
-                    <div className="column is-offset-3 is-6">
+                    <div className="column is-offset-4 is-4">
                         <figure className="image logoImage">
                             <img 
                                 alt="Ganalytics Dashboard - A simple view for your GA accounts"
