@@ -171,7 +171,7 @@ export class GoogleAnalyticsRow extends Component {
             if(day <= maxDaysDay)
                 resultsDay += currentValue
             else if(day > maxDaysDay && day <= (maxDaysDay*2))
-                resultsDay += currentValue
+                resultsDayComparative += currentValue
 
             // End of loop, update the state with the results
             if(index === (this.state.results.length - 1)){
