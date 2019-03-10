@@ -119,17 +119,17 @@ export class GoogleAnalyticsRow extends Component {
         let percentageDifferenceWeek = 0
 
         if(!isNaN(this.state.resultsDayComparative) && this.state.resultsDayComparative !== 0)
-            percentageDifferenceDay = ((this.state.resultsDay - this.state.resultsDayComparative)* 100) / this.state.resultsDayComparative
+            percentageDifferenceDay = parseFloat(((this.state.resultsDay - this.state.resultsDayComparative)* 100) / this.state.resultsDayComparative).toFixed(2)
         else
             percentageDifferenceDay = '♾️'
 
         if(!isNaN(this.state.resultsMonthComparative) && this.state.resultsMonthComparative !== 0)
-            percentageDifferenceMonth = ((this.state.resultsMonth - this.state.resultsMonthComparative)* 100) / this.state.resultsMonthComparative
+            percentageDifferenceMonth = parseFloat(((this.state.resultsMonth - this.state.resultsMonthComparative)* 100) / this.state.resultsMonthComparative).toFixed(2)
         else
             percentageDifferenceMonth = '♾️'
 
          if(!isNaN(this.state.resultsWeekComparative) && this.state.resultsWeekComparative !== 0)
-            percentageDifferenceWeek = ((this.state.resultsWeek - this.state.resultsWeekComparative)* 100) / this.state.resultsWeekComparative
+            percentageDifferenceWeek = parseFloat(((this.state.resultsWeek - this.state.resultsWeekComparative)* 100) / this.state.resultsWeekComparative).toFixed(2)
         else
             percentageDifferenceWeek = '♾️'
 
@@ -153,7 +153,7 @@ export class GoogleAnalyticsRow extends Component {
         let resultsMonthComparative = 0
         let resultsWeekComparative = 0
         let resultsDayComparative = 0
-        
+
         this.state.results.forEach((element, index) => {
 
             const day = maxDays - parseInt(element.dimensions[0])
