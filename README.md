@@ -1,5 +1,3 @@
-# WORK IN PROGESS
-
 ## Google Analytics Dashboard
 
 Useful tool for a multi-website analytics agency. With this tool you can control the Analytics from a bunch of websites and compare the data from the day before, the week before and the month before.
