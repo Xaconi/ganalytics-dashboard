@@ -3,11 +3,18 @@ import React, { Component } from 'react'
 // Assets
 import logo from '../assets/img/logo.PNG'
 
+// Libs
+import { Helmet } from 'react-helmet'
+
 export class Header extends Component {
     render() {
         return(
             <header>
-                {/* Logo + Social Network Links */}
+                {/* Logo + Social Network Links + Helmet Meta Data*/}
+                <Helmet>
+                    <title>Ganalytics Dashboard</title>
+                    <meta name="description" content="A simple view for your GA accounts" />
+                </Helmet>
                 <div className="columns">
                     <div className="column is-offset-4 is-4">
                         <figure className="image logoImage">
