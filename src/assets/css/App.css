@@ -1,0 +1,72 @@
+html {
+	background-color: whitesmoke !important;
+}
+
+.App {
+	text-align: center;
+	background-color: whitesmoke;
+	padding: 20px 0px;
+}
+
+header .logoImage img {
+	border-radius: 5px;
+}
+
+.explanation {
+	text-align: justify;
+}
+
+.icons-container {
+	justify-content: center;
+}
+
+.icons-container .icon-container {
+	display: inline-flex;
+	width: 100px;
+	justify-content: center;
+}
+
+.googleAnalyticsList {
+	display: flex;
+    justify-content: center;
+}
+
+.googleAnalyticsList table {
+	background-color: unset;
+}
+
+.googleAnalyticsList table th,
+.googleAnalyticsList table td {
+	text-align: center;
+}
+
+.googleAnalyticsFieldLoaded {
+	border-radius: 5px;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.googleAnalyticsFieldLoaded.googleAnalyticsFieldBad {
+	background-color: #fe8282;
+	color: red;
+}
+
+.googleAnalyticsFieldLoaded.googleAnalyticsFieldGood {
+	background-color: #8afe82;
+}
+
+@keyframes textElementNotLoaded {
+	0%   {background-color: #c4c4c4;}
+	50%  {background-color: white;}
+	100%  {background-color: #c4c4c4;}
+  }
+
+.textElementNotLoaded{
+	width: 100px;
+	height: 25px;
+	background-color: #c4c4c4;
+	animation-name: textElementNotLoaded;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+	border-radius: 3px;
+}
