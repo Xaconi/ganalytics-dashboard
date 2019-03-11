@@ -16,13 +16,37 @@ export class GoogleAnalyticsField extends Component {
         return (
             <div>
                 {this.props.resultsCalculated
-                    ? <div key={this.props.id + this.props.date} className="googleAnalyticsFieldLoaded">
-                            { this.props.children }
+                    ? <div 
+                        className={
+                            "googleAnalyticsFieldLoaded " + 
+                            (
+                                this._checkFieldValue()
+                                ? 'googleAnalyticsFieldGood'
+                                : 'googleAnalyticsFieldBad'
+                            )
+                        }
+                        key={this.props.id + this.props.date}
+                        >
+                            {
+                                this._checkFieldValue()
+                                ? '+'
+                                : ''
+                            }
+                            { this.props.children } %
+                            {
+                                this._checkFieldValue()
+                                ? ' 📈'
+                                : ' 📉'
+                            }
                         </div>
                     : <div key={this.props.id + this.props.date} className="textElementNotLoaded">  
                     </div>
                 }
             </div>
         )
+    }
+
+    _checkFieldValue() {
+        return parseFloat(this.props.children) >= 0 || this.props.children === '♾️'
     }
 }
