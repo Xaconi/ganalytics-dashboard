@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Data presentation
 - [x] Data comparative
 - [x] Styles on each field depending on the results
-- [ ] Basic Metadata with Helmet
+- [x] Basic Metadata with Helmet
 - [ ] Deployment on [Github Pages](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom)
 
 
@@ -41,4 +41,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Enable the Google Analytics API on [Google Developers Console](https://cloud.google.com/)
 * Add the Google Analytics API scope on [Google Developers Console](https://cloud.google.com/)
 * Start the App with ``` npm start ```
-* ...
+* Enjoy! Be careful with the Google Cloud quotas!
