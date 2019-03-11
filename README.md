@@ -39,8 +39,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Enable the Google Analytics API on [Google Developers Console](https://cloud.google.com/)
 * Add the Google Analytics API scope on [Google Developers Console](https://cloud.google.com/)
 * Start the App with ``` npm start ```
-<<<<<<< HEAD
-* ...
-=======
 * Enjoy! Be careful with the Google Cloud quotas!
->>>>>>> gh-pages
