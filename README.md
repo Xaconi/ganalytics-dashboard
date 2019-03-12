@@ -4,6 +4,10 @@ Useful tool for a multi-website analytics agency. With this tool you can control
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[Demo](https://xaconi.surge.sh/).
+
+
+
 ### @TODO List
 
 - [x] OAuth Google Login 
@@ -16,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Data comparative
 - [x] Styles on each field depending on the results
 - [x] Basic Metadata with Helmet
-- [ ] Deployment on [Github Pages](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom)
+- [x] Deployment on [Surge](https://surge.sh/)
 
 
 ### Install instructions
