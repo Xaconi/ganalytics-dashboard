@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Demo](https://xaconi.surge.sh/).
 
-
+<a href="https://bulma.io"><img src="https://bulma.io/images/made-with-bulma.png" alt="Bulma: a Flexbox CSS framework" width="128" height="24"></a>
 
 ### @TODO List
 
